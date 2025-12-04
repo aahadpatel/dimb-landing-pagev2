@@ -1,3 +1,5 @@
+'use client'
+
 import { Box, Flex, Heading, VisuallyHidden } from '@chakra-ui/react'
 import { Link } from '@saas-ui/react'
 
@@ -16,8 +18,8 @@ export const Logo = ({ href = '/', onClick }: LogoProps) => {
     logo = <Box as={siteConfig.logo} height="32px" mt="-4px" />
   } else {
     logo = (
-      <Heading as="h1" size="md">
-        {siteConfig.seo?.title}
+      <Heading as="h1" size="md" fontWeight="bold">
+        DimB
       </Heading>
     )
   }

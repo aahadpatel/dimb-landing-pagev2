@@ -3,13 +3,13 @@ import { Link } from '@saas-ui/react'
 import { NextSeoProps } from 'next-seo'
 import { FaGithub, FaTwitter } from 'react-icons/fa'
 import { FiCheck } from 'react-icons/fi'
-import { Logo } from './logo'
 
 const siteConfig = {
-  logo: Logo,
+  logo: undefined,
   seo: {
-    title: 'Saas UI',
-    description: 'The React component library for startups',
+    title: 'DimB - Product Intelligence for Sales',
+    description:
+      'Unlock the full value of your offering for every customer. Product intelligence at your reps fingertips.',
   } as NextSeoProps,
   termsUrl: '#',
   privacyUrl: '#',
@@ -20,71 +20,56 @@ const siteConfig = {
         label: 'Features',
       },
       {
-        id: 'pricing',
-        label: 'Pricing',
-      },
-      {
         id: 'faq',
         label: 'FAQ',
       },
       {
-        label: 'Login',
-        href: '/login',
-      },
-      {
-        label: 'Sign Up',
-        href: '/signup',
-        variant: 'primary',
+        label: 'Contact',
+        href: 'mailto:suchin@dimb.app',
       },
     ],
   },
   footer: {
     copyright: (
-      <>
-        Built by{' '}
-        <Link href="https://twitter.com/Pagebakers">Eelco Wiersma</Link>
-      </>
+      <>DimB © {new Date().getFullYear()}. Product Intelligence for Sales.</>
     ),
     links: [
       {
-        href: 'mailto:hello@saas-ui.dev',
-        label: 'Contact',
+        href: 'mailto:suchin@dimb.app',
+        label: 'Contact: suchin@dimb.app',
       },
       {
-        href: 'https://twitter.com/saas_js',
-        label: <FaTwitter size="14" />,
-      },
-      {
-        href: 'https://github.com/saas-js/saas-ui',
-        label: <FaGithub size="14" />,
+        href: 'tel:+12819404284',
+        label: '(281) 940-4284',
       },
     ],
   },
   signup: {
-    title: 'Start building with Saas UI',
+    title: 'Ready to unlock your offering?',
     features: [
       {
         icon: FiCheck,
-        title: 'Accessible',
-        description: 'All components strictly follow WAI-ARIA standards.',
+        title: 'Dynamic Offering Management',
+        description:
+          'Automatically curate and maintain offerings for categories and strategic accounts.',
       },
       {
         icon: FiCheck,
-        title: 'Themable',
+        title: 'Real-Time Collaboration',
         description:
-          'Fully customize all components to your brand with theme support and style props.',
+          'Enable seamless collaboration between product experts and sellers. Answers embedded in your product data.',
       },
       {
         icon: FiCheck,
-        title: 'Composable',
+        title: 'Increased Deal Value',
         description:
-          'Compose components to fit your needs and mix them together to create new ones.',
+          'Help sellers close higher-value deals faster with product intelligence at their fingertips.',
       },
       {
         icon: FiCheck,
-        title: 'Productive',
+        title: 'Higher Margins',
         description:
-          'Designed to reduce boilerplate and fully typed, build your product at speed.',
+          'Surface preferred and complementary products to maximize profit on every sale.',
       },
     ],
   },

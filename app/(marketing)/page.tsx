@@ -4,34 +4,18 @@ import {
   Box,
   ButtonGroup,
   Container,
-  Flex,
-  HStack,
   Heading,
-  Icon,
-  IconButton,
+  SimpleGrid,
   Stack,
-  Tag,
   Text,
   VStack,
-  Wrap,
-  useClipboard,
 } from '@chakra-ui/react'
-import { Br, Link } from '@saas-ui/react'
-import type { Metadata, NextPage } from 'next'
-import Image from 'next/image'
+import type { NextPage } from 'next'
 import {
-  FiArrowRight,
   FiBox,
-  FiCheck,
-  FiCode,
-  FiCopy,
-  FiFlag,
   FiGrid,
-  FiLock,
   FiSearch,
-  FiSliders,
   FiSmile,
-  FiTerminal,
   FiThumbsUp,
   FiToggleLeft,
   FiTrendingUp,
@@ -45,24 +29,8 @@ import { Faq } from '#components/faq'
 import { Features } from '#components/features'
 import { BackgroundGradient } from '#components/gradients/background-gradient'
 import { Hero } from '#components/hero'
-import {
-  Highlights,
-  HighlightsItem,
-  HighlightsTestimonialItem,
-} from '#components/highlights'
-import { ChakraLogo, NextjsLogo } from '#components/logos'
 import { FallInPlace } from '#components/motion/fall-in-place'
-import { Pricing } from '#components/pricing/pricing'
-import { Testimonial, Testimonials } from '#components/testimonials'
-import { Em } from '#components/typography'
 import faq from '#data/faq'
-import pricing from '#data/pricing'
-import testimonials from '#data/testimonials'
-
-export const meta: Metadata = {
-  title: 'Saas UI Landingspage',
-  description: 'Free SaaS landingspage starter kit',
-}
 
 const Home: NextPage = () => {
   return (
@@ -72,10 +40,6 @@ const Home: NextPage = () => {
       <HighlightsSection />
 
       <FeaturesSection />
-
-      <TestimonialsSection />
-
-      <PricingSection />
 
       <FaqSection />
     </Box>
@@ -87,78 +51,42 @@ const HeroSection: React.FC = () => {
     <Box position="relative" overflow="hidden">
       <BackgroundGradient height="100%" zIndex="-1" />
       <Container maxW="container.xl" pt={{ base: 40, lg: 60 }} pb="40">
-        <Stack direction={{ base: 'column', lg: 'row' }} alignItems="center">
+        <Stack direction="column" alignItems="center" justifyContent="center">
           <Hero
             id="home"
-            justifyContent="flex-start"
+            justifyContent="center"
             px="0"
-            title={
-              <FallInPlace>
-                Build beautiful
-                <Br /> software faster
-              </FallInPlace>
-            }
+            textAlign="center"
+            titleAlign="center"
+            fontSize={['3xl', '4xl', '5xl']}
+            title={<FallInPlace>Sell solutions, not SKUs</FallInPlace>}
             description={
               <FallInPlace delay={0.4} fontWeight="medium">
-                Saas UI is a <Em>React component library</Em>
-                <Br /> that doesn&apos;t get in your way and helps you <Br />{' '}
-                build intuitive SaaS products with speed.
+                Maximize revenue and margin by unlocking the full value of your
+                offering for every customer. Product intelligence at your
+                reps&apos; fingertips.
               </FallInPlace>
             }
           >
             <FallInPlace delay={0.8}>
-              <HStack pt="4" pb="12" spacing="8">
-                <NextjsLogo height="28px" /> <ChakraLogo height="20px" />
-              </HStack>
-
-              <ButtonGroup spacing={4} alignItems="center">
-                <ButtonLink colorScheme="primary" size="lg" href="/signup">
-                  Sign Up
-                </ButtonLink>
+              <ButtonGroup
+                spacing={4}
+                alignItems="center"
+                justifyContent="center"
+                mt={8}
+              >
                 <ButtonLink
+                  colorScheme="primary"
                   size="lg"
-                  href="https://demo.saas-ui.dev"
-                  variant="outline"
-                  rightIcon={
-                    <Icon
-                      as={FiArrowRight}
-                      sx={{
-                        transitionProperty: 'common',
-                        transitionDuration: 'normal',
-                        '.chakra-button:hover &': {
-                          transform: 'translate(5px)',
-                        },
-                      }}
-                    />
-                  }
+                  href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2ZPSP0Hrfia2UxPBPJdfpV7qmC1jGHrTVM9c7nrQYnKTASv7jMbiyqhay3JJqxxK9Vg3K8k9Vm"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  View demo
+                  Get a Demo
                 </ButtonLink>
               </ButtonGroup>
             </FallInPlace>
           </Hero>
-          <Box
-            height="600px"
-            position="absolute"
-            display={{ base: 'none', lg: 'block' }}
-            left={{ lg: '60%', xl: '55%' }}
-            width="80vw"
-            maxW="1100px"
-            margin="0 auto"
-          >
-            <FallInPlace delay={1}>
-              <Box overflow="hidden" height="100%">
-                <Image
-                  src="/static/screenshots/list.png"
-                  width={1200}
-                  height={762}
-                  alt="Screenshot of a ListPage in Saas UI Pro"
-                  quality="75"
-                  priority
-                />
-              </Box>
-            </FallInPlace>
-          </Box>
         </Stack>
       </Container>
 
@@ -167,36 +95,37 @@ const HeroSection: React.FC = () => {
         columns={[1, 2, 4]}
         iconSize={4}
         innerWidth="container.xl"
-        pt="20"
+        pt="5"
         features={[
           {
-            title: 'Accessible',
-            icon: FiSmile,
-            description: 'All components strictly follow WAI-ARIA standards.',
+            title: 'Higher Revenue',
+            icon: FiTrendingUp,
+            description:
+              'Reps close higher-value deals when they have product intelligence.',
             iconPosition: 'left',
             delay: 0.6,
           },
           {
-            title: 'Themable',
-            icon: FiSliders,
+            title: 'Better Margins',
+            icon: FiThumbsUp,
             description:
-              'Fully customize all components to your brand with theme support and style props.',
+              'Surface preferred and complementary products to maximize profit per sale.',
             iconPosition: 'left',
             delay: 0.8,
           },
           {
-            title: 'Composable',
-            icon: FiGrid,
+            title: 'Faster Sales',
+            icon: FiSearch,
             description:
-              'Compose components to fit your needs and mix them together to create new ones.',
+              'Reps find answers instantly instead of waiting on product experts.',
             iconPosition: 'left',
             delay: 1,
           },
           {
-            title: 'Productive',
-            icon: FiThumbsUp,
+            title: 'Expert Time Freed',
+            icon: FiSmile,
             description:
-              'Designed to reduce boilerplate and fully typed, build your product at speed.',
+              'Product experts focus on strategy instead of answering the same questions.',
             iconPosition: 'left',
             delay: 1.1,
           },
@@ -208,108 +137,251 @@ const HeroSection: React.FC = () => {
 }
 
 const HighlightsSection = () => {
-  const { value, onCopy, hasCopied } = useClipboard('yarn add @saas-ui/react')
-
   return (
-    <Highlights>
-      <HighlightsItem colSpan={[1, null, 2]} title="Core components">
-        <VStack alignItems="flex-start" spacing="8">
-          <Text color="muted" fontSize="xl">
-            Get started for free with <Em>30+ open source components</Em>.
-            Including authentication screens with Clerk, Supabase and Magic.
-            Fully functional forms with React Hook Form. Data tables with React
-            Table.
-          </Text>
-
-          <Flex
-            rounded="full"
-            borderWidth="1px"
-            flexDirection="row"
-            alignItems="center"
-            py="1"
-            ps="8"
-            pe="2"
-            bg="primary.900"
-            _dark={{ bg: 'gray.900' }}
+    <Box>
+      {/* The Problem Section */}
+      <Container
+        maxW="container.xl"
+        minH={['auto', null, '90vh']}
+        display="flex"
+        alignItems="center"
+        py={[10, 16]}
+      >
+        <VStack
+          alignItems="center"
+          spacing={[6, 8, 10]}
+          textAlign="center"
+          width="100%"
+        >
+          <Heading as="h2" fontSize={['3xl', null, '5xl']} fontWeight="bold">
+            THE PROBLEM
+          </Heading>
+          <Text
+            color="muted"
+            fontSize={['2xl', '3xl', '4xl']}
+            maxW="900px"
+            fontWeight="medium"
           >
-            <Box>
-              <Text color="yellow.400" display="inline">
-                yarn add
-              </Text>{' '}
-              <Text color="cyan.300" display="inline">
-                @saas-ui/react
+            You carry the products and expertise to win every sale — but without
+            a way to scale it, customers only see a fraction of your value.
+          </Text>
+          <SimpleGrid columns={[1, null, 3]} spacing={8} width="100%" pt={8}>
+            <Box
+              p={10}
+              borderWidth="1px"
+              borderRadius="2xl"
+              bg="white"
+              _dark={{ bg: 'gray.800', borderColor: 'gray.700' }}
+              minH={['200px', '250px', '300px']}
+              display="flex"
+              flexDirection="column"
+              boxShadow="lg"
+              transition="all 0.3s"
+              _hover={{
+                transform: 'translateY(-4px)',
+                boxShadow: 'xl',
+              }}
+            >
+              <Text
+                fontWeight="bold"
+                fontSize={['xl', '2xl']}
+                mb={4}
+                color="primary.500"
+              >
+                Offerings evolve, but your systems do not
+              </Text>
+              <Text color="muted" fontSize={['md', 'lg']}>
+                Spreadsheets, ERPs, and PIMs are limited to pre-configured
+                categories. New product lines and strategies can't be
+                accommodated.
               </Text>
             </Box>
-            <IconButton
-              icon={hasCopied ? <FiCheck /> : <FiCopy />}
-              aria-label="Copy install command"
-              onClick={onCopy}
-              variant="ghost"
-              ms="4"
-              isRound
-              color="white"
-            />
-          </Flex>
-        </VStack>
-      </HighlightsItem>
-      <HighlightsItem title="Solid foundations">
-        <Text color="muted" fontSize="lg">
-          We don&apos;t like to re-invent the wheel, neither should you. We
-          selected the most productive and established tools in the scene and
-          build Saas UI on top of it.
-        </Text>
-      </HighlightsItem>
-      <HighlightsTestimonialItem
-        name="Renata Alink"
-        description="Founder"
-        avatar="/static/images/avatar.jpg"
-        gradient={['pink.200', 'purple.500']}
-      >
-        “Saas UI helped us set up a beautiful modern UI in no time. It saved us
-        hundreds of hours in development time and allowed us to focus on
-        business logic for our specific use-case from the start.”
-      </HighlightsTestimonialItem>
-      <HighlightsItem
-        colSpan={[1, null, 2]}
-        title="Start your next idea two steps ahead"
-      >
-        <Text color="muted" fontSize="lg">
-          We took care of all your basic frontend needs, so you can start
-          building functionality that makes your product unique.
-        </Text>
-        <Wrap mt="8">
-          {[
-            'authentication',
-            'navigation',
-            'crud',
-            'settings',
-            'multi-tenancy',
-            'layouts',
-            'billing',
-            'a11y testing',
-            'server-side rendering',
-            'documentation',
-            'onboarding',
-            'storybooks',
-            'theming',
-            'upselling',
-            'unit testing',
-            'feature flags',
-            'responsiveness',
-          ].map((value) => (
-            <Tag
-              key={value}
-              variant="subtle"
-              colorScheme="purple"
-              rounded="full"
-              px="3"
+
+            <Box
+              p={10}
+              borderWidth="1px"
+              borderRadius="2xl"
+              bg="white"
+              _dark={{ bg: 'gray.800', borderColor: 'gray.700' }}
+              minH={['200px', '250px', '300px']}
+              display="flex"
+              flexDirection="column"
+              boxShadow="lg"
+              transition="all 0.3s"
+              _hover={{
+                transform: 'translateY(-4px)',
+                boxShadow: 'xl',
+              }}
             >
-              {value}
-            </Tag>
-          ))}
-        </Wrap>
-      </HighlightsItem>
-    </Highlights>
+              <Text
+                fontWeight="bold"
+                fontSize={['xl', '2xl']}
+                mb={4}
+                color="primary.500"
+              >
+                Reps can't sell what they don't know
+              </Text>
+              <Text color="muted" fontSize={['md', 'lg']}>
+                Without easy access to the whole offering, sellers spend hours
+                searching or default to selling only what they know.
+              </Text>
+            </Box>
+
+            <Box
+              p={10}
+              borderWidth="1px"
+              borderRadius="2xl"
+              bg="white"
+              _dark={{ bg: 'gray.800', borderColor: 'gray.700' }}
+              minH={['200px', '250px', '300px']}
+              display="flex"
+              flexDirection="column"
+              boxShadow="lg"
+              transition="all 0.3s"
+              _hover={{
+                transform: 'translateY(-4px)',
+                boxShadow: 'xl',
+              }}
+            >
+              <Text
+                fontWeight="bold"
+                fontSize={['xl', '2xl']}
+                mb={4}
+                color="primary.500"
+              >
+                Product experts are swamped with requests
+              </Text>
+              <Text color="muted" fontSize={['md', 'lg']}>
+                Answers buried in emails and calls resurface again and again.
+                Experts field nonstop urgent asks.
+              </Text>
+            </Box>
+          </SimpleGrid>
+        </VStack>
+      </Container>
+
+      {/* Our Solution Section */}
+      <Container
+        maxW="container.xl"
+        minH={['auto', null, '90vh']}
+        display="flex"
+        alignItems="center"
+        py={[10, 16]}
+      >
+        <VStack
+          alignItems="center"
+          spacing={[6, 8, 10]}
+          textAlign="center"
+          width="100%"
+        >
+          <Heading as="h2" fontSize={['3xl', null, '5xl']} fontWeight="bold">
+            OUR SOLUTION
+          </Heading>
+          <Text
+            color="muted"
+            fontSize={['2xl', '3xl', '4xl']}
+            maxW="900px"
+            fontWeight="medium"
+          >
+            Maximize revenue and margin by unlocking the full value of your
+            offering for every customer.
+          </Text>
+          <SimpleGrid columns={[1, null, 3]} spacing={8} width="100%" pt={8}>
+            <Box
+              p={10}
+              borderWidth="1px"
+              borderRadius="2xl"
+              bg="white"
+              _dark={{ bg: 'gray.800', borderColor: 'gray.700' }}
+              minH={['200px', '250px', '300px']}
+              display="flex"
+              flexDirection="column"
+              boxShadow="lg"
+              transition="all 0.3s"
+              _hover={{
+                transform: 'translateY(-4px)',
+                boxShadow: 'xl',
+              }}
+            >
+              <Text
+                fontWeight="bold"
+                fontSize={['xl', '2xl']}
+                mb={4}
+                color="primary.500"
+              >
+                Dynamic Offering Management
+              </Text>
+              <Text color="muted" fontSize={['md', 'lg']}>
+                Automatically curate and maintain offerings for product
+                categories and strategic accounts. Define relationships at
+                scale.
+              </Text>
+            </Box>
+
+            <Box
+              p={10}
+              borderWidth="1px"
+              borderRadius="2xl"
+              bg="white"
+              _dark={{ bg: 'gray.800', borderColor: 'gray.700' }}
+              minH={['200px', '250px', '300px']}
+              display="flex"
+              flexDirection="column"
+              boxShadow="lg"
+              transition="all 0.3s"
+              _hover={{
+                transform: 'translateY(-4px)',
+                boxShadow: 'xl',
+              }}
+            >
+              <Text
+                fontWeight="bold"
+                fontSize={['xl', '2xl']}
+                mb={4}
+                color="primary.500"
+              >
+                Product Intelligence On-Demand
+              </Text>
+              <Text color="muted" fontSize={['md', 'lg']}>
+                Help sellers close higher-value deals faster. Surface
+                alternatives, preferred, and complementary products.
+              </Text>
+            </Box>
+
+            <Box
+              p={10}
+              borderWidth="1px"
+              borderRadius="2xl"
+              bg="white"
+              _dark={{ bg: 'gray.800', borderColor: 'gray.700' }}
+              minH={['200px', '250px', '300px']}
+              display="flex"
+              flexDirection="column"
+              boxShadow="lg"
+              transition="all 0.3s"
+              _hover={{
+                transform: 'translateY(-4px)',
+                boxShadow: 'xl',
+              }}
+            >
+              <Text
+                fontWeight="bold"
+                fontSize={['xl', '2xl']}
+                mb={4}
+                color="primary.500"
+              >
+                Real-Time Collaboration
+              </Text>
+              <Text color="muted" fontSize={['md', 'lg']}>
+                Enable seamless collaboration between product experts and
+                sellers. Answers embedded in product data so every rep benefits
+                instantly.
+              </Text>
+            </Box>
+          </SimpleGrid>
+        </VStack>
+      </Container>
+    </Box>
   )
 }
 
@@ -321,19 +393,17 @@ const FeaturesSection = () => {
         <Heading
           lineHeight="short"
           fontSize={['2xl', null, '4xl']}
-          textAlign="left"
+          textAlign="center"
           as="p"
         >
-          Not your standard
-          <Br /> dashboard template.
+          Key Capabilities of DimB
         </Heading>
       }
       description={
         <>
-          Saas UI Pro includes everything you need to build modern frontends.
-          <Br />
-          Use it as a template for your next product or foundation for your
-          design system.
+          DimB delivers everything your revenue team needs to maximize customer
+          value. Unlock complete offering visibility and empower your reps to
+          close higher-value deals.
         </>
       }
       align="left"
@@ -341,116 +411,43 @@ const FeaturesSection = () => {
       iconSize={4}
       features={[
         {
-          title: '#components.',
-          icon: FiBox,
+          title: 'Flexible Data Model',
+          icon: FiGrid,
           description:
-            'All premium components are available on a private NPM registery, no more copy pasting and always up-to-date.',
-          variant: 'inline',
+            'Capture product relationships and commercial attributes that evolve with your business. No limitations from pre-configured systems.',
         },
         {
-          title: 'Starterkits.',
-          icon: FiLock,
-          description:
-            'Example apps in Next.JS, Electron. Including authentication, billing, example pages, everything you need to get started FAST.',
-          variant: 'inline',
-        },
-        {
-          title: 'Documentation.',
+          title: 'Smart Offering Curation',
           icon: FiSearch,
           description:
-            'Extensively documented, including storybooks, best practices, use-cases and examples.',
-          variant: 'inline',
+            'Automatically curate offerings for product categories, key industries, and strategic accounts at scale.',
         },
         {
-          title: 'Onboarding.',
+          title: 'Rep Enablement',
           icon: FiUserPlus,
           description:
-            'Add user onboarding flows, like tours, hints and inline documentation without breaking a sweat.',
-          variant: 'inline',
+            'Surface alternatives, preferred, and complementary products to help sellers close higher-value deals faster.',
         },
         {
-          title: 'Feature flags.',
-          icon: FiFlag,
+          title: 'Expert Collaboration',
+          icon: FiBox,
           description:
-            "Implement feature toggles for your billing plans with easy to use hooks. Connect Flagsmith, or other remote config services once you're ready.",
-          variant: 'inline',
+            'Enable real-time collaboration between product experts and sellers. Answers embedded in product data.',
         },
         {
-          title: 'Upselling.',
+          title: 'Revenue Intelligence',
           icon: FiTrendingUp,
           description:
-            '#components and hooks for upgrade flows designed to make upgrading inside your app frictionless.',
-          variant: 'inline',
+            'Maximize deal value and profit margin with intelligent product recommendations tailored to each customer.',
         },
         {
-          title: 'Themes.',
+          title: 'Instant Updates',
           icon: FiToggleLeft,
           description:
-            'Includes multiple themes with darkmode support, always have the perfect starting point for your next project.',
-          variant: 'inline',
-        },
-        {
-          title: 'Generators.',
-          icon: FiTerminal,
-          description:
-            'Extend your design system while maintaininig code quality and consistency with built-in generators.',
-          variant: 'inline',
-        },
-        {
-          title: 'Monorepo.',
-          icon: FiCode,
-          description: (
-            <>
-              All code is available as packages in a high-performance{' '}
-              <Link href="https://turborepo.com">Turborepo</Link>, you have full
-              control to modify and adjust it to your workflow.
-            </>
-          ),
-          variant: 'inline',
+            'Product experts update information once, and every rep benefits instantly. No more duplicate questions.',
         },
       ]}
     />
-  )
-}
-
-const TestimonialsSection = () => {
-  const columns = React.useMemo(() => {
-    return testimonials.items.reduce<Array<typeof testimonials.items>>(
-      (columns, t, i) => {
-        columns[i % 3].push(t)
-
-        return columns
-      },
-      [[], [], []],
-    )
-  }, [])
-
-  return (
-    <Testimonials
-      title={testimonials.title}
-      columns={[1, 2, 3]}
-      innerWidth="container.xl"
-    >
-      <>
-        {columns.map((column, i) => (
-          <Stack key={i} spacing="8">
-            {column.map((t, i) => (
-              <Testimonial key={i} {...t} />
-            ))}
-          </Stack>
-        ))}
-      </>
-    </Testimonials>
-  )
-}
-
-const PricingSection = () => {
-  return (
-    <Pricing {...pricing}>
-      <Text p="8" textAlign="center" color="muted">
-        VAT may be applicable depending on your location.
-      </Text>
-    </Pricing>
   )
 }
 

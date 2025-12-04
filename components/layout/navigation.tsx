@@ -1,3 +1,5 @@
+'use client'
+
 import { HStack } from '@chakra-ui/react'
 import { useDisclosure, useUpdateEffect } from '@chakra-ui/react'
 import { useScrollSpy } from 'hooks/use-scrollspy'

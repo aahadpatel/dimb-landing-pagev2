@@ -1,10 +1,6 @@
-import {
-  Box,
-  BoxProps,
-  Container,
-  Flex,
-  useColorModeValue,
-} from '@chakra-ui/react'
+'use client'
+
+import { Box, BoxProps, Container, Flex } from '@chakra-ui/react'
 import { useScroll } from 'framer-motion'
 
 import * as React from 'react'
@@ -24,8 +20,6 @@ export const Header = (props: HeaderProps) => {
     return scrollY.on('change', () => setY(scrollY.get()))
   }, [scrollY])
 
-  const bg = useColorModeValue('whiteAlpha.700', 'rgba(29, 32, 37, 0.7)')
-
   return (
     <Box
       ref={ref}
@@ -38,7 +32,8 @@ export const Header = (props: HeaderProps) => {
       borderColor="whiteAlpha.100"
       transitionProperty="common"
       transitionDuration="normal"
-      bg={y > height ? bg : ''}
+      bg={y > height ? 'whiteAlpha.700' : ''}
+      _dark={{ bg: y > height ? 'rgba(29, 32, 37, 0.7)' : '' }}
       boxShadow={y > height ? 'md' : ''}
       borderBottomWidth={y > height ? '1px' : ''}
       {...props}

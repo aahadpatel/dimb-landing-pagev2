@@ -19,27 +19,45 @@ export interface FooterProps extends BoxProps {
 export const Footer: React.FC<FooterProps> = (props) => {
   const { columns = 2, ...rest } = props
   return (
-    <Box bg="white" _dark={{ bg: 'gray.900' }} {...rest}>
+    <Box
+      bg="white"
+      _dark={{ bg: 'gray.900', borderColor: 'gray.700' }}
+      borderTop="2px solid"
+      borderColor="gray.200"
+      {...rest}
+    >
       <Container maxW="container.2xl" px="8" py="8">
-        <SimpleGrid columns={columns}>
-          <Stack spacing="8">
-            <Stack alignItems="flex-start">
+        <SimpleGrid columns={[1, null, columns]} spacing={8}>
+          <Stack
+            spacing="8"
+            alignItems={['center', null, 'flex-start']}
+            textAlign={['center', null, 'left']}
+          >
+            <Stack alignItems={['center', null, 'flex-start']}>
               <Flex>
-                <Box as={siteConfig.logo} flex="1" height="32px" />
+                <Text fontSize="2xl" fontWeight="bold">
+                  DimB
+                </Text>
               </Flex>
-              <Text fontSize="md" color="muted">
+              <Text fontSize="md" color="muted" maxW="400px">
                 {siteConfig.seo.description}
               </Text>
             </Stack>
             <Copyright>{siteConfig.footer.copyright}</Copyright>
           </Stack>
-          <HStack justify="flex-end" spacing="4" alignSelf="flex-end">
+          <Stack
+            direction={['column', 'row']}
+            justify={['center', null, 'flex-end']}
+            spacing="4"
+            alignSelf={['center', null, 'flex-end']}
+            alignItems="center"
+          >
             {siteConfig.footer?.links?.map(({ href, label }) => (
               <FooterLink key={href} href={href}>
                 {label}
               </FooterLink>
             ))}
-          </HStack>
+          </Stack>
         </SimpleGrid>
       </Container>
     </Box>
@@ -71,7 +89,7 @@ export const FooterLink: React.FC<LinkProps> = (props) => {
   return (
     <Link
       color="muted"
-      fontSize="sm"
+      fontSize={['md', 'sm']}
       textDecoration="none"
       _hover={{
         color: 'white',

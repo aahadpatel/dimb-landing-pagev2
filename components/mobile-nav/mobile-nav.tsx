@@ -7,6 +7,7 @@ import {
   IconButtonProps,
   LinkProps,
   Stack,
+  Text,
   useBreakpointValue,
   useColorModeValue,
   useUpdateEffect,
@@ -45,6 +46,7 @@ function NavLink({ href, children, isActive, ...rest }: NavLinkProps) {
       py="3"
       transition="0.2s all"
       fontWeight={isActive ? 'semibold' : 'medium'}
+      fontSize="lg"
       borderColor={isActive ? 'purple.400' : undefined}
       borderBottomWidth="1px"
       color={isActive ? 'white' : undefined}
@@ -70,7 +72,6 @@ export function MobileNavContent(props: MobileNavContentProps) {
   const bgColor = useColorModeValue('whiteAlpha.900', 'blackAlpha.900')
 
   useRouteChanged(onClose)
-  console.log({ isOpen })
   /**
    * Scenario: Menu is open on mobile, and user resizes to desktop/tablet viewport.
    * Result: We'll close the menu
@@ -109,7 +110,9 @@ export function MobileNavContent(props: MobileNavContentProps) {
           >
             <Box>
               <Flex justify="space-between" px="8" pt="4" pb="4">
-                <Logo />
+                <Text fontSize="2xl" fontWeight="bold">
+                  DimB
+                </Text>
                 <HStack spacing="5">
                   <CloseButton ref={closeBtnRef} onClick={onClose} />
                 </HStack>

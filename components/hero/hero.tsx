@@ -3,22 +3,36 @@ import { Container, Flex, FlexProps, Text, VStack } from '@chakra-ui/react'
 interface HeroProps extends Omit<FlexProps, 'title'> {
   title: string | React.ReactNode
   description?: string | React.ReactNode
+  titleAlign?: 'left' | 'center' | 'right'
 }
 
-export const Hero = ({ title, description, children, ...rest }: HeroProps) => {
+export const Hero = ({
+  title,
+  description,
+  children,
+  titleAlign = 'left',
+  ...rest
+}: HeroProps) => {
+  const isCenter = titleAlign === 'center'
+
   return (
-    <Flex py="20" alignItems="center" {...rest}>
+    <Flex py={[10, 12, 16]} alignItems="center" {...rest}>
       <Container>
-        <VStack spacing={[4, null, 8]} alignItems="flex-start">
-          <Text as="h1" textStyle="h1" textAlign="left">
+        <VStack
+          spacing={[4, null, 6]}
+          alignItems={isCenter ? 'center' : 'flex-start'}
+          width="100%"
+        >
+          <Text as="h1" textStyle="h1" textAlign={titleAlign} width="100%">
             {title}
           </Text>
           <Text
             as="div"
             textStyle="subtitle"
-            align="left"
+            align={isCenter ? 'center' : 'left'}
             color="gray.500"
             _dark={{ color: 'gray.400' }}
+            width="100%"
           >
             {description}
           </Text>
