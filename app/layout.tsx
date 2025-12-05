@@ -1,26 +1,9 @@
-import { ColorModeScript } from '@chakra-ui/react'
-
 import { Provider } from './provider'
 
 export default function Layout(props: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  var mode = localStorage.getItem('chakra-ui-color-mode');
-                  if (mode) {
-                    document.documentElement.dataset.theme = mode;
-                    document.documentElement.style.colorScheme = mode;
-                  }
-                } catch (e) {}
-              })();
-            `,
-          }}
-        />
         <link
           rel="apple-touch-icon"
           sizes="76x76"
@@ -40,8 +23,7 @@ export default function Layout(props: { children: React.ReactNode }) {
         />
         <link rel="manifest" href="/static/favicons/manifest.json" />
       </head>
-      <body suppressHydrationWarning>
-        <ColorModeScript initialColorMode="dark" type="localStorage" />
+      <body>
         <Provider>{props.children}</Provider>
       </body>
     </html>

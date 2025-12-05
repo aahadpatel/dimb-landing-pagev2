@@ -6,7 +6,6 @@ export const Logo: React.FC<HTMLChakraProps<'svg'>> = (props) => {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 550 172"
       color="gray.800"
-      _dark={{ color: 'white' }}
       {...props}
     >
       <path

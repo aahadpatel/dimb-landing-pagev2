@@ -33,7 +33,6 @@ export const Header = (props: HeaderProps) => {
       transitionProperty="common"
       transitionDuration="normal"
       bg={y > height ? 'whiteAlpha.700' : ''}
-      _dark={{ bg: y > height ? 'rgba(29, 32, 37, 0.7)' : '' }}
       boxShadow={y > height ? 'md' : ''}
       borderBottomWidth={y > height ? '1px' : ''}
       {...props}

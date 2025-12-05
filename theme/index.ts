@@ -8,21 +8,17 @@ import { fontSizes } from './foundations/typography'
 export const theme = extendTheme(
   {
     config: {
-      initialColorMode: 'dark',
+      initialColorMode: 'light',
       useSystemColorMode: false,
     },
     styles: {
-      global: (props: any) => ({
+      global: {
         body: {
           color: 'gray.900',
           bg: 'white',
           fontSize: 'lg',
-          _dark: {
-            color: 'white',
-            bg: 'gray.900',
-          },
         },
-      }),
+      },
     },
     fonts: {
       heading: 'Inter Variable, Inter, sans-serif',

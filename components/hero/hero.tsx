@@ -26,14 +26,13 @@ export const Hero = ({
           <Text as="h1" textStyle="h1" textAlign={titleAlign} width="100%">
             {title}
           </Text>
-          <Text
-            as="div"
-            textStyle="subtitle"
-            align={isCenter ? 'center' : 'left'}
-            color="gray.500"
-            _dark={{ color: 'gray.400' }}
-            width="100%"
-          >
+                <Text
+                  as="div"
+                  textStyle="subtitle"
+                  align={isCenter ? 'center' : 'left'}
+                  color="gray.500"
+                  width="100%"
+                >
             {description}
           </Text>
         </VStack>

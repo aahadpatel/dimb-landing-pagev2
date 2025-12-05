@@ -21,7 +21,6 @@ export const Footer: React.FC<FooterProps> = (props) => {
   return (
     <Box
       bg="white"
-      _dark={{ bg: 'gray.900', borderColor: 'gray.700' }}
       borderTop="2px solid"
       borderColor="gray.200"
       {...rest}

@@ -171,7 +171,6 @@ const HighlightsSection = () => {
               borderWidth="1px"
               borderRadius="2xl"
               bg="white"
-              _dark={{ bg: 'gray.800', borderColor: 'gray.700' }}
               minH={['200px', '250px', '300px']}
               display="flex"
               flexDirection="column"
@@ -202,7 +201,6 @@ const HighlightsSection = () => {
               borderWidth="1px"
               borderRadius="2xl"
               bg="white"
-              _dark={{ bg: 'gray.800', borderColor: 'gray.700' }}
               minH={['200px', '250px', '300px']}
               display="flex"
               flexDirection="column"
@@ -229,10 +227,9 @@ const HighlightsSection = () => {
 
             <Box
               p={10}
-              borderWidth="1px"
+            borderWidth="1px"
               borderRadius="2xl"
               bg="white"
-              _dark={{ bg: 'gray.800', borderColor: 'gray.700' }}
               minH={['200px', '250px', '300px']}
               display="flex"
               flexDirection="column"
@@ -292,7 +289,6 @@ const HighlightsSection = () => {
               borderWidth="1px"
               borderRadius="2xl"
               bg="white"
-              _dark={{ bg: 'gray.800', borderColor: 'gray.700' }}
               minH={['200px', '250px', '300px']}
               display="flex"
               flexDirection="column"
@@ -323,7 +319,6 @@ const HighlightsSection = () => {
               borderWidth="1px"
               borderRadius="2xl"
               bg="white"
-              _dark={{ bg: 'gray.800', borderColor: 'gray.700' }}
               minH={['200px', '250px', '300px']}
               display="flex"
               flexDirection="column"
@@ -345,7 +340,7 @@ const HighlightsSection = () => {
               <Text color="muted" fontSize={['md', 'lg']}>
                 Help sellers close higher-value deals faster. Surface
                 alternatives, preferred, and complementary products.
-              </Text>
+        </Text>
             </Box>
 
             <Box
@@ -353,7 +348,6 @@ const HighlightsSection = () => {
               borderWidth="1px"
               borderRadius="2xl"
               bg="white"
-              _dark={{ bg: 'gray.800', borderColor: 'gray.700' }}
               minH={['200px', '250px', '300px']}
               display="flex"
               flexDirection="column"
