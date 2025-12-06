@@ -38,7 +38,7 @@ export const Footer: React.FC<FooterProps> = (props) => {
                   DimB
                 </Text>
               </Flex>
-              <Text fontSize="md" color="muted" maxW="400px">
+              <Text fontSize="md" color="#1c1e21" maxW="400px">
                 {siteConfig.seo.description}
               </Text>
             </Stack>
@@ -77,7 +77,7 @@ export const Copyright: React.FC<CopyrightProps> = ({
     content = `&copy; ${new Date().getFullYear()} - ${title}`
   }
   return (
-    <Text color="muted" fontSize="sm">
+    <Text color="#1c1e21" fontSize="sm">
       {content || children}
     </Text>
   )
@@ -87,11 +87,11 @@ export const FooterLink: React.FC<LinkProps> = (props) => {
   const { children, ...rest } = props
   return (
     <Link
-      color="muted"
+      color="#1c1e21"
       fontSize={['md', 'sm']}
       textDecoration="none"
       _hover={{
-        color: 'white',
+        color: '#1e3c72',
         transition: 'color .2s ease-in',
       }}
       {...rest}

@@ -30,7 +30,7 @@ export const Hero = ({
                   as="div"
                   textStyle="subtitle"
                   align={isCenter ? 'center' : 'left'}
-                  color="gray.500"
+                  color="#1c1e21"
                   width="100%"
                 >
             {description}

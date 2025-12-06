@@ -20,8 +20,9 @@ export const NavLink = forwardRef<NavLinkProps, 'a'>((props, ref) => {
       variant="nav-link"
       lineHeight="2rem"
       isActive={isActive}
-      fontWeight="medium"
-      fontSize="lg"
+      fontWeight="semibold"
+      fontSize="xl"
+      color="#1c1e21"
       {...rest}
     />
   )

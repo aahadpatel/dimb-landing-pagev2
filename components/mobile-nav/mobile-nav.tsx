@@ -44,13 +44,14 @@ function NavLink({ href, children, isActive, ...rest }: NavLinkProps) {
       px="8"
       py="3"
       transition="0.2s all"
-      fontWeight={isActive ? 'semibold' : 'medium'}
-      fontSize="lg"
-      borderColor={isActive ? 'purple.400' : undefined}
+      fontWeight={isActive ? 'bold' : 'semibold'}
+      fontSize="xl"
+      borderColor={isActive ? '#1e3c72' : undefined}
       borderBottomWidth="1px"
-      color={isActive ? 'white' : undefined}
+      color={isActive ? '#1e3c72' : '#1c1e21'}
       _hover={{
-        bg: isActive ? 'purple.500' : bgActiveHoverColor,
+        bg: isActive ? '#1e3c72' : bgActiveHoverColor,
+        color: isActive ? 'white' : '#1e3c72',
       }}
       {...rest}
     >

@@ -145,7 +145,7 @@ const HighlightsSection = () => {
         minH={['auto', null, '90vh']}
         display="flex"
         alignItems="center"
-        py={[10, 16]}
+        py={[8, 12]}
       >
         <VStack
           alignItems="center"
@@ -153,14 +153,14 @@ const HighlightsSection = () => {
           textAlign="center"
           width="100%"
         >
-          <Heading as="h2" fontSize={['3xl', null, '5xl']} fontWeight="bold">
+          <Heading as="h2" fontSize={['3xl', null, '5xl']} fontWeight="extrabold">
             THE PROBLEM
           </Heading>
           <Text
-            color="muted"
+            color="#1c1e21"
             fontSize={['2xl', '3xl', '4xl']}
             maxW="900px"
-            fontWeight="medium"
+            fontWeight="semibold"
           >
             You carry the products and expertise to win every sale — but without
             a way to scale it, customers only see a fraction of your value.
@@ -185,11 +185,11 @@ const HighlightsSection = () => {
                 fontWeight="bold"
                 fontSize={['xl', '2xl']}
                 mb={4}
-                color="primary.500"
+                color="#1e3c72"
               >
                 Offerings evolve, but your systems do not
               </Text>
-              <Text color="muted" fontSize={['md', 'lg']}>
+              <Text color="#1c1e21" fontSize={['md', 'lg']}>
                 Spreadsheets, ERPs, and PIMs are limited to pre-configured
                 categories. New product lines and strategies can't be
                 accommodated.
@@ -215,11 +215,11 @@ const HighlightsSection = () => {
                 fontWeight="bold"
                 fontSize={['xl', '2xl']}
                 mb={4}
-                color="primary.500"
+                color="#1e3c72"
               >
                 Reps can't sell what they don't know
               </Text>
-              <Text color="muted" fontSize={['md', 'lg']}>
+              <Text color="#1c1e21" fontSize={['md', 'lg']}>
                 Without easy access to the whole offering, sellers spend hours
                 searching or default to selling only what they know.
               </Text>
@@ -244,11 +244,11 @@ const HighlightsSection = () => {
                 fontWeight="bold"
                 fontSize={['xl', '2xl']}
                 mb={4}
-                color="primary.500"
+                color="#1e3c72"
               >
                 Product experts are swamped with requests
               </Text>
-              <Text color="muted" fontSize={['md', 'lg']}>
+              <Text color="#1c1e21" fontSize={['md', 'lg']}>
                 Answers buried in emails and calls resurface again and again.
                 Experts field nonstop urgent asks.
               </Text>
@@ -263,7 +263,7 @@ const HighlightsSection = () => {
         minH={['auto', null, '90vh']}
         display="flex"
         alignItems="center"
-        py={[10, 16]}
+        py={[8, 12]}
       >
         <VStack
           alignItems="center"
@@ -271,14 +271,14 @@ const HighlightsSection = () => {
           textAlign="center"
           width="100%"
         >
-          <Heading as="h2" fontSize={['3xl', null, '5xl']} fontWeight="bold">
+          <Heading as="h2" fontSize={['3xl', null, '5xl']} fontWeight="extrabold">
             OUR SOLUTION
           </Heading>
           <Text
-            color="muted"
+            color="#1c1e21"
             fontSize={['2xl', '3xl', '4xl']}
             maxW="900px"
-            fontWeight="medium"
+            fontWeight="semibold"
           >
             Maximize revenue and margin by unlocking the full value of your
             offering for every customer.
@@ -303,11 +303,11 @@ const HighlightsSection = () => {
                 fontWeight="bold"
                 fontSize={['xl', '2xl']}
                 mb={4}
-                color="primary.500"
+                color="#1e3c72"
               >
                 Dynamic Offering Management
               </Text>
-              <Text color="muted" fontSize={['md', 'lg']}>
+              <Text color="#1c1e21" fontSize={['md', 'lg']}>
                 Automatically curate and maintain offerings for product
                 categories and strategic accounts. Define relationships at
                 scale.
@@ -333,11 +333,11 @@ const HighlightsSection = () => {
                 fontWeight="bold"
                 fontSize={['xl', '2xl']}
                 mb={4}
-                color="primary.500"
+                color="#1e3c72"
               >
                 Product Intelligence On-Demand
               </Text>
-              <Text color="muted" fontSize={['md', 'lg']}>
+              <Text color="#1c1e21" fontSize={['md', 'lg']}>
                 Help sellers close higher-value deals faster. Surface
                 alternatives, preferred, and complementary products.
         </Text>
@@ -362,11 +362,11 @@ const HighlightsSection = () => {
                 fontWeight="bold"
                 fontSize={['xl', '2xl']}
                 mb={4}
-                color="primary.500"
+                color="#1e3c72"
               >
                 Real-Time Collaboration
               </Text>
-              <Text color="muted" fontSize={['md', 'lg']}>
+              <Text color="#1c1e21" fontSize={['md', 'lg']}>
                 Enable seamless collaboration between product experts and
                 sellers. Answers embedded in product data so every rep benefits
                 instantly.
