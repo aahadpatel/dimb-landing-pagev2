@@ -1,28 +1,22 @@
-import { Box, useTheme } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 
 export const BackgroundGradient = ({ hideOverlay, ...props }: any) => {
-  const theme = useTheme()
-  const colors = [
-    theme.colors.primary['800'],
-    theme.colors.secondary['500'],
-    theme.colors.cyan['500'],
-    theme.colors.teal['500'],
-  ]
+  const gradientColor = '#1e3c72'
 
-  let fallbackBackground = `radial-gradient(at top left, ${colors[0]} 30%, transparent 80%), radial-gradient(at bottom, ${colors[1]} 0%, transparent 60%), radial-gradient(at bottom left, var(--chakra-colors-cyan-500) 0%, transparent 50%),
-        radial-gradient(at top right, ${colors[3]}, transparent), radial-gradient(at bottom right, ${colors[0]} 0%, transparent 50%);`
+  let fallbackBackground = `radial-gradient(at top left, ${gradientColor} 100%, transparent 100%), radial-gradient(at bottom, ${gradientColor} 0%, transparent 60%), radial-gradient(at bottom left, ${gradientColor} 0%, transparent 50%),
+        radial-gradient(at top right, ${gradientColor}, transparent), radial-gradient(at bottom right, ${gradientColor} 0%, transparent 50%);`
 
-  let gradientOverlay = 'linear-gradient(0deg, var(--chakra-colors-white) 60%, rgba(0, 0, 0, 0) 100%);'
+  let gradientOverlay =
+    'linear-gradient(0deg, var(--chakra-colors-white) 60%, rgba(0, 0, 0, 0) 100%);'
 
   return (
     <Box
       backgroundImage={fallbackBackground}
-      backgroundBlendMode="saturation"
       position="absolute"
       top="0"
       left="0"
       zIndex="0"
-      opacity="0.3"
+      opacity="0.4"
       height="100vh"
       width="100%"
       overflow="hidden"

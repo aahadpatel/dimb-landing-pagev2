@@ -18,7 +18,12 @@ export const Logo = ({ href = '/', onClick }: LogoProps) => {
     logo = <Box as={siteConfig.logo} height="32px" mt="-4px" />
   } else {
     logo = (
-      <Heading as="h1" size="lg" fontWeight="extrabold" fontSize={['xl', '2xl']}>
+      <Heading
+        as="h1"
+        size="lg"
+        fontWeight="extrabold"
+        fontSize={['xl', '2xl']}
+      >
         DimB
       </Heading>
     )

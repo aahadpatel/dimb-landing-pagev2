@@ -76,11 +76,13 @@ const HeroSection: React.FC = () => {
                 mt={8}
               >
                 <ButtonLink
-                  colorScheme="primary"
+                  bg="#1e3c72"
+                  color="white"
                   size="lg"
                   href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2ZPSP0Hrfia2UxPBPJdfpV7qmC1jGHrTVM9c7nrQYnKTASv7jMbiyqhay3JJqxxK9Vg3K8k9Vm"
                   target="_blank"
                   rel="noopener noreferrer"
+                  _hover={{ bg: '#15274f' }}
                 >
                   Get a Demo
                 </ButtonLink>
@@ -153,7 +155,11 @@ const HighlightsSection = () => {
           textAlign="center"
           width="100%"
         >
-          <Heading as="h2" fontSize={['3xl', null, '5xl']} fontWeight="extrabold">
+          <Heading
+            as="h2"
+            fontSize={['3xl', null, '5xl']}
+            fontWeight="extrabold"
+          >
             THE PROBLEM
           </Heading>
           <Text
@@ -185,7 +191,7 @@ const HighlightsSection = () => {
                 fontWeight="bold"
                 fontSize={['xl', '2xl']}
                 mb={4}
-                color="#1e3c72"
+                color="#1c1e21"
               >
                 Offerings evolve, but your systems do not
               </Text>
@@ -215,7 +221,7 @@ const HighlightsSection = () => {
                 fontWeight="bold"
                 fontSize={['xl', '2xl']}
                 mb={4}
-                color="#1e3c72"
+                color="#1c1e21"
               >
                 Reps can't sell what they don't know
               </Text>
@@ -227,7 +233,7 @@ const HighlightsSection = () => {
 
             <Box
               p={10}
-            borderWidth="1px"
+              borderWidth="1px"
               borderRadius="2xl"
               bg="white"
               minH={['200px', '250px', '300px']}
@@ -244,7 +250,7 @@ const HighlightsSection = () => {
                 fontWeight="bold"
                 fontSize={['xl', '2xl']}
                 mb={4}
-                color="#1e3c72"
+                color="#1c1e21"
               >
                 Product experts are swamped with requests
               </Text>
@@ -271,7 +277,11 @@ const HighlightsSection = () => {
           textAlign="center"
           width="100%"
         >
-          <Heading as="h2" fontSize={['3xl', null, '5xl']} fontWeight="extrabold">
+          <Heading
+            as="h2"
+            fontSize={['3xl', null, '5xl']}
+            fontWeight="extrabold"
+          >
             OUR SOLUTION
           </Heading>
           <Text
@@ -340,7 +350,7 @@ const HighlightsSection = () => {
               <Text color="#1c1e21" fontSize={['md', 'lg']}>
                 Help sellers close higher-value deals faster. Surface
                 alternatives, preferred, and complementary products.
-        </Text>
+              </Text>
             </Box>
 
             <Box

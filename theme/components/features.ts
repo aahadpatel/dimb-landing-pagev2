@@ -21,7 +21,7 @@ const Features = {
       mb: 3,
       mr: 3,
       p: 2,
-      bg: 'primary.400',
+      bg: '#1e3c72',
       color: 'white',
       float: 'left',
     },
@@ -69,11 +69,8 @@ export const Feature = {
       mb: 4,
       mr: 4,
       p: 2,
-      bg: mode(
-        'primary.100',
-        transparentize('primary.500', 0.2)(props.theme)
-      )(props),
-      color: mode('primary.700', 'primary.400')(props),
+      bg: '#1e3c72',
+      color: 'white',
       float: 'left',
     },
   }),
